@@ -19,16 +19,14 @@ public class Gun : MonoBehaviour
         // Unity側での操作設定 [Edit]-[Project Settings]-[Input]-[Vertical] , [GOD] P.224
         transform. Rotate(
             // Y軸とZ軸は回転させない
-            new Vector3(Input.GetAxis("Vertical") * 60.0f * Time.deltaTime , 0f , 0f) , Space.Self
+            new Vector3(Input.GetAxis("Vertical") * 60.0f * Time.deltaTime , 0 , 0) , Space.Self
         );
         // 1秒間に60度の速度で砲塔の台座を縦軸に回転させる
         // Unity側での操作設定 [Edit]-[Project Settings]-[Input]-[Horizontal]
         Transform Base = transform.parent;
-        // 砲台を左右に動かすスクリプトの作成（参照先のObjectBaseがnullのためエラー）
-        // < https://docs.unity3d.com/ja/2018.4/Manual/NullReferenceException.html>
         Base. Rotate(
             // 台座の縦軸回転の動き、X軸とZ軸は回転させない
-            new Vector3(0f , Input.GetAxis("Horizontal") * 60.0f * Time.deltaTime , 0f) , Space.World
+            new Vector3(0f , Input.GetAxis("Horizontal") * 60.0f * Time.deltaTime , 0) , Space.World
         　　);
 
     }
